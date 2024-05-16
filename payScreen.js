@@ -175,7 +175,7 @@ function makeCheckoutInput(placeholder) {
   input.type = "text";
   input.classList.add("line-input");
   input.style.marginBottom = "1rem";
-  input.placeholder = placeholder;
+  input.placeholder = "Fake " + placeholder;
   return input;
 }
 
