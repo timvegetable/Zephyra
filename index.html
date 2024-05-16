@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zephyra</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link href="itemScreen.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand sticky-top shadowed" id="nav" style="background-color: #ffffff;">
+      <div class="flex-column" style="width: 100%">
+          <div class="container-fluid" id="navContent">
+              <img id="logo" alt="Zephyra logo" class="d-inline-block align-middle" />
+              <div class="navbar-nav" id="navCategories"></div>
+              <button id="searchButton" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#searchCollapse" aria-expanded="false" aria-controls="searchCollapse">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search nav-icon" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                  </svg>
+              </button>
+              <button id="navCartBtn" class="btn position-relative nav-icon">
+                  <svg id="cartIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                      <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                  </svg>
+              </button>
+              <!-- Trigger/Open The Modal -->
+              <button id="signIn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                  class="bi bi-person-circle nav-icon" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                  <path fill-rule="evenodd"
+                      d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                  </svg>
+                  Sign in
+              </button>
+          </div>
+          <div class="collapse" id="searchCollapse">
+              <div id="searchInputContainer" class="container-fluid">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="gray" class="bi bi-search" viewBox="0 0 16 16" style="margin-right: 1rem;">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                  </svg>
+                  <input id="searchInput" type="text" placeholder="Search zephyra.com"/>
+              </div>
+              <div id="searchResultsContainer">
+              </div>
+          </div>
+      </div>
+  </nav>
+  <div id="saleAlert" class="alert alert-primary text-center alert-dismissible fade show" role="alert">
+    Special deal week! Shop offers on furniture through 5/10.
+    <a id="saleLink" href="#" class="alert-link">Shop now ›</a>
+    <button id="dismissSale" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  
+  <div id="content">
+    <div id = "adsFirstRow" class="row">
+      <div class="col-lg-6" style="width: 30rem;">
+        <div class="card w-25 p-3 mb-4 rounded-3 shadow-sm border-primary rounded float-start">
+          <div class="card-body text-center">
+        <h1 class="text-center"><strong>Dorm supplies!</strong></h1>
+        <button type="button" class="btn btn-link" id="saleBtn1" style="font-weight: 500;">
+          Shop new dorm furniture
+        </button>
+      </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" style="width: 60rem;">
+        <div class="card w-25 p-3 mb-4 rounded-3 shadow-sm border-primary rounded float-start">
+          <div class="card-body text-center">
+            <h1 class="text-center"><strong>New Arrivals: Spring clothes!</strong></h1>
+            <button type="button" class="btn btn-link" id="saleBtn2"style="font-weight: 500;">
+              Shop new clothing
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id = "adsSecondRow" class="col-lg-6" style="width: 89rem;">
+      <div class="card w-25 p-3 mb-4 rounded-3 shadow-sm border-primary rounded float-start">
+        <div class="card-body text-center">
+          <h1 class="text-center"><strong>Shop toys for your little one</strong></h1>
+          <button type="button" class="btn btn-link" id="saleBtn3" style="font-weight: 500;">
+            Shop toys
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- account sign in modal -->
+
+  <div id="signInModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div id="signInModalContent" class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Sign in</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <input type="text" placeholder="Username" id="user" class="line-input"></input>
+          </div>
+          <div id="noAccount" class="d-flex align-items-center" style="margin-top: 0.4rem;">
+            <p style="margin-bottom: 0; font-size: 0.9rem;">No account? </p>
+            <button type="button" id="createAcc" class="btn btn-link"> Create one!</button>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <input type="password" placeholder="Password" id="passwordSignIn" class="line-input"></input>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="loginBtn">Go</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!--account sign in screen-->
+  <!--
+  <div class="container">
+    <div class="row m-4 text-center">
+      <h2 class="text-primary display-4 fw-normal">Create account</h2>
+    </div>
+    <div class="container">
+      <form id="accountForm" class="p-4 m-4 row shadow-sm rounded-3 border border-primary">
+        <div class="form-group row-md-4 my-2">
+          <label>Your name</label>
+          <input type="text" class="form-control account-input" id="name" placeholder="First and last name">
+        </div>
+        <div class="form-group row-md-4 my-2">
+          <label>Username</label>
+          <input type="text" class="form-control account-input" id="username">
+        </div>
+        <div class="form-group row-md-4 my-2">
+          <label>Password</label>
+          <input type="text" class="form-control account-input" id="password" placeholder="At least 6 characters">
+        </div>
+        <div class="form-group row-md-4 my-2">
+          <label>Confirm password</label>
+          <input type="text" class="form-control account-input" id="confirmPassword">
+        </div>
+        <div class="form-group mt-4">
+          <button type="button" class="btn btn-primary" id="createAccount">Create account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+-->
+  <!--  TODO: FOrmat and position elements-->
+
+  <!--Links to all the JS files, make sure these stay at the bottom otherwise you get errors  -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+  <script src="server.js"></script>
+  <script src="screenConstants.js"></script>
+  <script src="itemScreen.js"></script>
+  <script src="homeScreen.js"></script>
+  <script src="accountScreen.js"></script>
+  <script src="items.js"></script>
+  <script src="cartScreen.js"></script>
+  <script src="editor.js"></script>
+  <script src="search.js"></script>
+  <script src="payScreen.js"></script>
+  <script src="deptScreen.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
