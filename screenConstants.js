@@ -41,6 +41,15 @@ const PRICE_FORMAT = new Intl.NumberFormat("en-US", {
 
 LOGO.style.cursor = "pointer";
 
+{
+	const saleDate = new Date(Date.now() + 7 * 86400000);
+	document.getElementById(
+		"saleAlert"
+	).childNodes[0].textContent = `Special deal week! Shop offers on furniture through ${
+		saleDate.getMonth() + 1
+	}/${saleDate.getDate()}. `;
+}
+
 /**
  *
  * @param {GeolocationPosition} position
