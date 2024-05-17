@@ -167,6 +167,7 @@ async function makeDepts() {
 				const lines = results.data;
 				lines.shift();
 				for (const line of lines) {
+					console.log(line);
 					line[2] = line[2].split(/,\s*/);
 					line[6] = line[6] ? line[6].split(/,\s*/) : undefined;
 					line[7] = line[7] ? line[7].split(/,\s*/) : undefined;
