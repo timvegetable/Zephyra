@@ -182,18 +182,17 @@ function makeSortFunction(sortTarget) {
 function compareResults(one, two, target) {
 	const a = one.toLowerCase();
 	const b = two.toLowerCase();
-	for (let i = 0; i < target.length; i++) {
-		const aEquals = a.charAt(i) == target.charAt(i);
-		const bEquals = b.charAt(i) == target.charAt(i);
-		if (!aEquals && !bEquals) {
-			return 0;
-		} else if (!bEquals) {
-			return -1;
-		} else if (!aEquals) {
-			return 1;
-		} else {
-			continue;
-		}
-	}
-	return 0;
+	const aIndex = a.indexOf(target);
+    const bIndex = b.indexOf(target);
+    if (aIndex == bIndex) {
+        return 0;
+    } else if (bIndex == -1) {
+        return -1;
+    } else if (aIndex == -1) {
+        return 1;
+    } else if (aIndex < bIndex) {
+        return -1;
+    } else {
+        return 1;
+    }
 }
